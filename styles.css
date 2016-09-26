@@ -11,12 +11,11 @@ div ul li h1 article body{
 
 
 .whole-tab {
-  width: 450px;
-  /*margin: auto;*/
+  float: left;
+  margin-left: 20px;
 }
 
 ul {
-  float: left;
   list-style: none;
   padding-left: 0;
   margin:auto;
@@ -25,10 +24,9 @@ ul {
 .tab-header{
   float: left;
   text-align: center;
-  /*display: block;*/
-  width: 200px;
+
+  width: 98px;
   background-color: lightgreen;
-  /*margin:auto;*/
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   border: 1px solid black;
@@ -36,19 +34,54 @@ ul {
 
 .tab-content{
   display: block;
-  /*margin: auto;*/
   text-align: center;
   float: left;
-  width: 402px;
+  width: 198px;
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
-  height:300px;
+  min-height: 100px;
   padding-top: 20px;
 }
 
-.group {
+.group:after {
   content: "";
   display: block;
   clear: both;
+}
+
+
+.header-weather {
+  background-color: yellow;
+  padding: 10px;
+  text-align: center;
+}
+
+.header-clock {
+  background-color: tan;
+  text-align: center;
+  padding: 10px;
+}
+
+.all-widgets{
+  width: 800px
+}
+
+
+.clock-div {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  min-height: 140px;
+}
+
+.clock-ul {
+  padding: 5px;
+  border-top: 1px solid black;
+
+}
+
+h1 {
+  margin: 0;
 }

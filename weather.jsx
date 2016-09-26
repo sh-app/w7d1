@@ -3,7 +3,7 @@ export default class Weather extends React.Component {
 
   constructor(props){
     super(props);
-    this.state= {location: [], weather:{main: {humidity: 0, temp: 0} }};
+    this.state= {location: [], weather:{main: {humidity: 0, temp: 0}}, description: ""};
     this.getWeather = this.getWeather.bind(this);
   }
 
@@ -30,7 +30,7 @@ export default class Weather extends React.Component {
         console.log("WORKS");
         let currWeather = JSON.parse(request.responseText);
         // debugger
-        this.setState({weather: currWeather });
+        this.setState({weather: currWeather, description: currWeather.weather[0].description});
       }
     }.bind(this);
     request.onerror = function() {
@@ -46,14 +46,23 @@ export default class Weather extends React.Component {
   render() {
     if (this.state.weather.main.temp === 0) {
       return(
-        <div className="">Loading weather...</div>
+        <div className="clock-div whole-tab group">
+          <h1 className="header-weather">Today's Weather</h1>
+          <ul className="border clock-ul">
+            <li>Loading weather...</li>
+          </ul>
+        </div>
       );
     }
 
     return(
-      <div className="">
-        Temperature: {this.state.weather.main.temp}
-        Humidity: {this.state.weather.main.humidity}
+      <div className="clock-div whole-tab group">
+        <h1 className="header-weather">Today's Weather</h1>
+        <ul className="border clock-ul">
+          <li>Temperature: {Math.floor((this.state.weather.main.temp - 273.15)*1.8 + 32)}° F</li>
+          <li>Humidity: {this.state.weather.main.humidity}</li>
+          <li>Current conditions: {this.state.description}</li>
+        </ul>
       </div>
   );
   }

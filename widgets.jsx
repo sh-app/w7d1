@@ -12,7 +12,7 @@ class Widgets extends React.Component{
     let tabArray = [{id: 0, title: "Tab1", content: "CONTENT FOR TAB 1"},
     {id: 1, title:"Tab2", content: "CONTENT FOR TAB 2"}];
     return(
-      <div>
+      <div className= "group all-widgets">
         <Tabs data= {tabArray}/>
         <Clock/>
         <Weather />

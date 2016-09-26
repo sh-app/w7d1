@@ -26,9 +26,14 @@ export default class Clock extends React.Component {
     let time = this.state.date.toTimeString();
     let date = this.state.date.toDateString();
     return(
-      <div>
-        {time}
-        {date}
+      <div className="whole-tab clock-div group">
+        <h1 className="header-clock">Current Time</h1>
+        <ul className="border clock-ul">
+          <li><strong>Time:</strong> {time}</li>
+          <li><strong>Date:</strong> {date}</li>
+        </ul>
+
+
       </div>
     );
   }
