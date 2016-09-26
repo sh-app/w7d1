@@ -19,7 +19,7 @@ export default class Tabs extends React.Component {
     });
 
     return (
-      <div className="whole-tab">
+      <div className="whole-tab group">
         <ul className="group">
           {headerArray}
         </ul>
@@ -32,9 +32,10 @@ export default class Tabs extends React.Component {
 }
 
 const Header = ({header, switchTabs}) => (
-
-  <h1 className = "tab-header" onClick={switchTabs.bind(null, header.id)}>
-    {header.title}
-  </h1>
+  <li className = "tab-header" onClick={switchTabs.bind(null, header.id)}>
+    <h1 >
+      {header.title}
+    </h1>
+  </li>
 
 );
