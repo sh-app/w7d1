@@ -27,7 +27,6 @@ export default class Weather extends React.Component {
 
     request.onload = function (){
       if (request.status >= 200 && request.status < 400) {
-        console.log("WORKS");
         let currWeather = JSON.parse(request.responseText);
         // debugger
         this.setState({weather: currWeather, description: currWeather.weather[0].description});
